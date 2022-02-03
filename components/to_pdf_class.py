@@ -1,7 +1,7 @@
-from weasyprint import HTML, CSS
-from weasyprint.text.fonts import FontConfiguration
+from weasyprint import HTML
 import os
 from jinja2 import Environment, FileSystemLoader
+
 
 class Report:
     def __init__(self, vars_dict={}):

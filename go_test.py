@@ -1,9 +1,8 @@
-import to_pdf_class as pdf
+import components.to_pdf_class as pdf
 from datetime import datetime
 import components.exchange as exchange
 import json
 import os
-
 
 def get_dict():
     print('Use "." instead "," in decimal numbers!')
@@ -48,8 +47,3 @@ contract.start('CRE_contract.html', 'page_merge.pdf')
 #save the dict into a json file
 with open('output/var_dict.json', 'w') as f:
     json.dump(var_dict, f)
-
-
-
-
-

@@ -1,0 +1,84 @@
+<App@MDFloatLayout>
+
+    MDTextField:
+        id: licensee
+        hint_text: "Licensee name"
+        pos_hint: {"x": 0.05, "y": 0.9}
+        size_hint_x: 0.4
+
+    MDTextField:
+        id: start_date
+        hint_text: "start_date (yyyy-mm-dd)"
+        pos_hint: {"x": 0.05, "y": 0.8}
+        size_hint_x: 0.4
+
+    MDTextField:
+        id: end_date
+        hint_text: "end_date (yyyy-mm-dd)"
+        pos_hint: {"x": 0.05, "y": 0.7}
+        size_hint_x: 0.4
+
+    MDTextField:
+        id: location
+        hint_text: "Location (city, country)"
+        pos_hint: {"x": 0.05, "y": 0.6}
+        size_hint_x: 0.4
+
+    MDTextField:
+        id: apartment_city
+        hint_text: "apartment city"
+        pos_hint: {"x": 0.05, "y": 0.5}
+        size_hint_x: 0.4
+
+    MDTextField:
+        id: apartment_price
+        hint_text: "apartment price"
+        pos_hint: {"x": 0.05, "y": 0.4}
+        size_hint_x: 0.4
+
+    MDTextField:
+        id: licensor
+        hint_text: "Licensor name"
+        pos_hint: {"x": 0.05, "y": 0.3}
+        size_hint_x: 0.4
+
+    MDTextField:
+        id: onboarding
+        hint_text: "Onboarding deposit"
+        pos_hint: {"x": 0.55, "y": 0.9}
+        size_hint_x: 0.4
+
+    MDTextField:
+        id: security_MXN
+        hint_text: "Security deposit (MXN)"
+        pos_hint: {"x": 0.55, "y": 0.8}
+        size_hint_x: 0.4
+
+    MDTextField:
+        id: wage_MXN
+        hint_text: "Wage (MXN)"
+        pos_hint: {"x": 0.55, "y": 0.7}
+        size_hint_x: 0.4
+
+    MDTextField:
+        id: christmas_MXN
+        hint_text: "Christmas bonus (MXN)"
+        pos_hint: {"x": 0.55, "y": 0.6}
+        size_hint_x: 0.4   
+
+    MDTextField:
+        id: apartment_fee
+        hint_text: "Apartment fee (USD)"
+        pos_hint: {"x": 0.55, "y": 0.5}
+        size_hint_x: 0.4        
+
+
+    MDRaisedButton:
+        text: "Submit"
+        pos_hint: {"x": 0.5, "y": 0.1}
+        size_hint: 0.2, 0.1
+        on_release: 
+            print('ok')
+            app.submit()
+
+App
