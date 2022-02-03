@@ -10,8 +10,8 @@
   margin-bottom: -0.5cm;
   font-family: 'arial';
   font-size: 15px;
+  page-break-after: always;
 }
-
 
 .container {
     display: inline-block;
@@ -24,6 +24,7 @@
     display: inline-block;
     vertical-align: top;
 }
+
 .clause-container {
   float: top;
   min-height: 170px;
@@ -51,4 +52,16 @@
   width: 48%;
   float: right;
   right: 0px;
+}
+
+.sign-container {
+  margin-left: 0.5cm;
+  margin-right: 0.5cm;
+  position: relative;
+
+  top: 100px
+}
+
+.payment-container {
+  margin-left: 0.5cm;
 }
