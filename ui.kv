@@ -8,13 +8,13 @@
 
     MDTextField:
         id: start_date
-        hint_text: "start_date (yyyy-mm-dd)"
+        hint_text: "start_date (dd/mm/yyyy)"
         pos_hint: {"x": 0.05, "y": 0.8}
         size_hint_x: 0.4
 
     MDTextField:
         id: end_date
-        hint_text: "end_date (yyyy-mm-dd)"
+        hint_text: "end_date (dd/mm/yyy)"
         pos_hint: {"x": 0.05, "y": 0.7}
         size_hint_x: 0.4
 
@@ -70,10 +70,11 @@
         id: apartment_fee
         hint_text: "Apartment fee (USD)"
         pos_hint: {"x": 0.55, "y": 0.5}
-        size_hint_x: 0.4        
+        size_hint_x: 0.4   
 
 
     MDRaisedButton:
+        id: btn
         text: "Submit"
         pos_hint: {"x": 0.5, "y": 0.1}
         size_hint: 0.2, 0.1
