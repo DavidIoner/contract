@@ -34,9 +34,9 @@
     <div class="clause-container">
         <div class="left-top-container">
             <p>
-                Date: {{date}} <br>
-                between: {{start_date}} and {{end_date}} <br> <br>
-                for locartion in: {{location}} <br>
+                Date: {{date}} <br> <br>
+                between: {{start_date}} - {{end_date}}  <br>
+                5CRE as licensor<br> 
             </p>
 
             <p>
@@ -45,11 +45,28 @@
                 Workers/Employees: Pricing pursuant to Exhibit A <br>  
             </p>
         </div>
+
+        <div class="middle-top-container">
+            <div>
+                <p>
+                    <br> <br> <br>
+                    and;
+                </p>
+            </div>
+            <div class="care-container">
+                <p>
+                    Care of: &nbsp;&nbsp;
+                </p>
+            </div>
+        </div>
         <div class="right-top-container">
             <p>
                 <br> <br> <br>
-                {{licensee}} As licensee. <br>
-                Located at: {{location}} <br>
+                {{company}} nameee <br>
+                {{licensee}}, As licensee. <br>
+                Located at: {{licensee_location}} <br>
+                Phone: {{phone}} <br>
+                For a location in: {{location}} <br>
             </p>
         </div>
     </div>
@@ -117,7 +134,7 @@
             <p>
                 ___________________________________ <br>
                 by: {{licensee}} <br>
-                Licensee
+                {{company}}.Licensee
             </p>
         </div>
 
@@ -138,8 +155,130 @@
             3. <strong>Bi-weekly Wage Payment of</strong>  {{wage_MXN}}MXN (${{wage_USD}}USD at time of writing, subject to change), Payable at 1st and 15th of every month, charged by 5CRE’s LATAM affiliate. <br> <br>
             4. <strong> Bi-weekly Rental Fee</strong> os 200 USD per desk charged by 5CRE <br> <br>
         </p>
-        {{payment_schedule}}
-        <p>PAYMENT SCHEDULE</p>
+        <table>
+            <tr>
+                <th colspan="8">PAYMENT SCHEDULE</th>
+            </tr>
+            <tr>
+                <th colspan="2">Due Period</th>
+                <th>Wage in MXN</th>
+                <th>Fee in USD</th>
+                <th colspan="2">Due Period</th>
+                <th>Wage in MXN</th>
+                <th>Fee in USD</th>
+            </tr>
+            <tr>
+                <td rowspan="2">1st month</td>
+                <td>1st</td>
+                <td>{{wage_MXN}}</td>
+                <td>200</td>
+                <td rowspan="2">7th month</td>
+                <td>1st</td>
+                <td>{{wage_MXN}}</td>
+                <td>200</td>
+            </tr>
+            <tr>
+                <td>15th</td>
+                <td>{{wage_MXN}}</td>
+                <td>200</td>
+                <td>15th</td>
+                <td>{{wage_MXN}}</td>
+                <td>200</td>
+            </tr>
+            <tr>
+                <td rowspan="2">2nd month</td>
+                <td>1st</td>
+                <td>{{wage_MXN}}</td>
+                <td>200</td>
+                <td rowspan="2">8th month</td>
+                <td>1st</td>
+                <td>{{wage_MXN}}</td>
+                <td>200</td>
+            </tr>
+            <tr>
+                <td>15th</td>
+                <td>{{wage_MXN}}</td>
+                <td>200</td>
+                <td>15th</td>
+                <td>{{wage_MXN}}</td>
+                <td>200</td>
+            </tr>
+            <tr>
+                <td rowspan="2">3rd month</td>
+                <td>1st</td>
+                <td>{{wage_MXN}}</td>
+                <td>200</td>
+                <td rowspan="2">9th month</td>
+                <td>1st</td>
+                <td>{{wage_MXN}}</td>
+                <td>200</td>
+            </tr>
+            <tr>
+                <td>15th</td>
+                <td>{{wage_MXN}}</td>
+                <td>200</td>
+                <td>15th</td>
+                <td>{{wage_MXN}}</td>
+                <td>200</td>
+            </tr>
+            <tr>
+                <td rowspan="2">4th month</td>
+                <td>1st</td>
+                <td>{{wage_MXN}}</td>
+                <td>200</td>
+                <td rowspan="2">10th month</td>
+                <td>1st</td>
+                <td>{{wage_MXN}}</td>
+                <td>200</td>
+            </tr>
+            <tr>
+                <td>15th</td>
+                <td>{{wage_MXN}}</td>
+                <td>200</td>
+                <td>15th</td>
+                <td>{{wage_MXN}}</td>
+                <td>200</td>
+            </tr>
+            <tr>
+                <td rowspan="2">5th month</td>
+                <td>1st</td>
+                <td>{{wage_MXN}}</td>
+                <td>200</td>
+                <td rowspan="2">11th month</td>
+                <td>1st</td>
+                <td>{{wage_MXN}}</td>
+                <td>200</td>
+            </tr>
+            <tr>
+                <td>15th</td>
+                <td>{{wage_MXN}}</td>
+                <td>200</td>
+                <td>15th</td>
+                <td>{{wage_MXN}}</td>
+                <td>200</td>
+            </tr>
+            <tr>
+                <td rowspan="2">6st month</td>
+                <td>1st</td>
+                <td>{{wage_MXN}}</td>
+                <td>200</td>
+                <td rowspan="2">12st month</td>
+                <td>1st</td>
+                <td>{{wage_MXN}}</td>
+                <td>200</td>
+            </tr>
+            <tr>
+                <td>15th</td>
+                <td>{{wage_MXN}}</td>
+                <td>200</td>
+                <td>15th</td>
+                <td>{{wage_MXN}}</td>
+                <td>200</td>
+            </tr>
+        </table>
+        <p>
+            (*) ${{MXN}}USD at time of writing, subject to change.
+        </p>
         <p>
             5. <strong>Other payments.</strong> <br> <br>
             <strong>Christmas bonus:</strong> {{christmas_MXN}} MXN (${{christmas_USD}}USD at time of writing, subject to change), payable for all workers who have been working at your organization for 4 or more months. Charged by 5CRE’s LATAM affiliate. Payable On December 1. <br>

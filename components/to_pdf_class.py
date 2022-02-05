@@ -20,7 +20,7 @@ class Report:
         #self.template_name = template_name
         self.ROOT = os.path.dirname(os.path.abspath(__file__))
         self.TEMPLATE_SRC = os.path.join(self.ROOT, 'templates')
-        self.DEST_DIR = self.ROOT.replace('/components', '/output')
+        self.DEST_DIR = os.path.join(self.ROOT, 'output')
        
         print(self.vars_dict)
 
@@ -30,6 +30,7 @@ class Report:
         template = env.get_template(template_file)
         css = os.path.join(self.TEMPLATE_SRC, 'styles.css')
         # variables
+        print('carregou template')
         BRL = get_rate('BRL-USD')
         MXN = get_rate('MXN-USD')
         COP = get_rate('COP-USD')
@@ -41,11 +42,13 @@ class Report:
         self.vars_dict.update({'MXN': f'{MXN:.2f}', 'BRL': f'{BRL:.2f}', 'COP': f'{COP:.2f}'})
         self.vars_dict.update({'security_USD': f'{security_USD:.2f}', 'wage_USD': f'{wage_USD:.2f}', 'christmas_USD': f'{christmas_USD:.2f}', 'apartment_fee_USD': f'{apartment_fee_USD:.2f}'})
 
+        print("fase 1")
         # rendering to html string
         self.vars_dict['template_src'] = 'file://' + self.TEMPLATE_SRC
         rendered_string = template.render(self.vars_dict)
         html = HTML(string=rendered_string)
         report = os.path.join(self.DEST_DIR, output_name)
+        print("fase 2")
         html.write_pdf(report, stylesheets=[css])
         print(f'file is generated successfully and under {self.DEST_DIR}')
  

@@ -1,3 +1,12 @@
+table, tr, td {
+  border-collapse: collapse;
+  border: 1px solid black;
+  text-align: center; 
+  width: 80px;
+}
+
+
+
 .logo-container {
   height: 124px;
   width: 134px;
@@ -31,15 +40,31 @@
 }
 
 .left-top-container {
-  width: 51%;
+  width: 45%;
   float: left;
 }
 
+.middle-top-container {
+  width: 16.5%;
+  float: left;
+  text-align: left; 
+  display: inline;
+}
+
+.care-container {
+  text-align: right;
+  float: top;
+  margin-top: -15px;
+}
+
+
 .right-top-container {
-  width: 48%;
+  width: 38%;
   float: right;
-  text-align: center;
-  min-height: 170px;
+  float: top;
+  text-align: left;
+  min-height: 180px;
+  display: inline;
 }
 
 .left-container {
