@@ -9,7 +9,7 @@ class App(MDApp):
         super().__init__(**kwargs)
 
     def build(self):
-        kv = Builder.load_file("ui.kv")
+        kv = Builder.load_file("components/ui.kv")
         return kv
 
 
