@@ -28,6 +28,7 @@ class Report:
         template = env.get_template(template_file)
         css = os.path.join(self.TEMPLATE_SRC, 'styles.css')
         
+        print('setting variables')
         # variables
         BRL = get_rate('BRL-USD')
         MXN = get_rate('MXN-USD')
@@ -39,12 +40,13 @@ class Report:
         self.vars_dict.update({'date': datetime.now().strftime('%d/%m/%Y')})
         self.vars_dict.update({'MXN': f'{MXN:.2f}', 'BRL': f'{BRL:.2f}', 'COP': f'{COP:.2f}'})
         self.vars_dict.update({'security_USD': f'{security_USD:.2f}', 'wage_USD': f'{wage_USD:.2f}', 'christmas_USD': f'{christmas_USD:.2f}', 'apartment_price_USD': f'{apartment_price_USD:.2f}'})
-
+        print('rendering')
         # rendering to html string
         self.vars_dict['template_src'] = 'file://' + self.TEMPLATE_SRC
         rendered_string = template.render(self.vars_dict)
         html = HTML(string=rendered_string)
         report = os.path.join(self.DEST_DIR, output_name)
+        print('generating pdf')
         html.write_pdf(report, stylesheets=[css])
         print(f'file is generated successfully and under {self.DEST_DIR}')
  
