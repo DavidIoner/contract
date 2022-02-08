@@ -2,81 +2,114 @@
 
     MDTextField:
         id: licensee
-        hint_text: "Licensee name"
+        hint_text: "Licensee principal name"
         pos_hint: {"x": 0.05, "y": 0.9}
         size_hint_x: 0.4
+        write_tab: False
+        multiline: False
+        on_text_validate: root.foo()
     
     MDTextField:
         id: company
         hint_text: "Company name"
         pos_hint: {"x": 0.05, "y": 0.8}
         size_hint_x: 0.4
+        write_tab: False
+        multiline: False
+        on_text_validate: root.foo()
 
     MDTextField:
         id: located_at
         hint_text: "Located at"
         pos_hint: {"x": 0.05, "y": 0.7}
         size_hint_x: 0.4
+        write_tab: False
+        multiline: False
+        on_text_validate: root.foo()
 
     MDTextField:
         id: phone
         hint_text: "Phone number"
         pos_hint: {"x": 0.05, "y": 0.6}
         size_hint_x: 0.4
+        write_tab: False
+        multiline: False
+        on_text_validate: root.foo()
 
-    MDTextField:
-        id: location
-        hint_text: "Location (city, country)"
-        pos_hint: {"x": 0.05, "y": 0.5}
-        size_hint_x: 0.4
 
     MDTextField:
         id: start_date
         hint_text: "start_date (dd/mm/yyyy)"
-        pos_hint: {"x": 0.05, "y": 0.4}
+        pos_hint: {"x": 0.05, "y": 0.5}
         size_hint_x: 0.4
+        write_tab: False
+        multiline: False
+        on_text_validate: root.foo()
 
-    MDTextField:
-        id: end_date
-        hint_text: "end_date (dd/mm/yyy)"
-        pos_hint: {"x": 0.05, "y": 0.3}
-        size_hint_x: 0.4
 
     MDTextField:
         id: licensor
         hint_text: "Licensor name"
-        pos_hint: {"x": 0.05, "y": 0.2}
+        pos_hint: {"x": 0.05, "y": 0.4}
         size_hint_x: 0.4
+        write_tab: False
+        multiline: False
+        on_text_validate: root.foo()
 
     MDTextField:
         id: onboarding
         hint_text: "Onboarding deposit (USD)"
         pos_hint: {"x": 0.55, "y": 0.9}
         size_hint_x: 0.4
+        write_tab: False
+        multiline: False
+        on_text_validate: root.foo()
 
     MDTextField:
-        id: security_MXN
+        id: security
         hint_text: "Security deposit (MXN)"
         pos_hint: {"x": 0.55, "y": 0.8}
         size_hint_x: 0.4
+        write_tab: False
+        multiline: False
+        on_text_validate: root.foo()
 
     MDTextField:
-        id: apartment_price_MXN
-        hint_text: "apartment fee (MXN)"
+        id: apartment_price_USD
+        hint_text: "apartment fee (USD)"
         pos_hint: {"x": 0.55, "y": 0.7}
         size_hint_x: 0.4
+        write_tab: False
+        multiline: False
+        on_text_validate: root.foo()
 
     MDTextField:
         id: wage_MXN
         hint_text: "Wage (MXN)"
         pos_hint: {"x": 0.55, "y": 0.6}
         size_hint_x: 0.4
+        write_tab: False
+        multiline: False
+        on_text_validate: root.foo()
 
     MDTextField:
         id: christmas_MXN
         hint_text: "Christmas bonus (MXN)"
         pos_hint: {"x": 0.55, "y": 0.5}
         size_hint_x: 0.4   
+        write_tab: False
+        multiline: False
+        on_text_validate: root.foo()
+
+
+    MDTextField:
+        id: federal_holiday_MXN
+        hint_text: "federal holiday (MXN)"
+        pos_hint: {"x": 0.55, "y": 0.4}
+        size_hint_x: 0.4   
+        write_tab: False
+        multiline: False
+        on_text_validate: root.foo()
 
 
 
@@ -93,5 +126,19 @@
         text: ""
         pos_hint: {"x": 0.55, "y": 0.1}
         size_hint: 0.4, 0.1
+
+    MDDropDownItem:
+        id: drop_local
+        pos_hint: {"x": 0.05, "y": 0.3}
+        text: 'select the location'
+        size_hint: 0.4, 0.1
+        on_release: app.menu.open()
+    
+    MDSwitch:
+        id: security_select
+        pos_hint: {"x": 0.47, "y": 0.8}
+
+        on_active: app.check(*args)
+        
 
 App
