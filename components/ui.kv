@@ -36,29 +36,18 @@
         multiline: False
         on_text_validate: root.foo()
 
-
     MDTextField:
-        id: start_date
-        hint_text: "start_date (dd/mm/yyyy)"
+        id: licensor
+        hint_text: "Licensor name"
         pos_hint: {"x": 0.05, "y": 0.5}
         size_hint_x: 0.4
         write_tab: False
         multiline: False
         on_text_validate: root.foo()
 
-
     MDTextField:
-        id: licensor
-        hint_text: "Licensor name"
-        pos_hint: {"x": 0.05, "y": 0.4}
-        size_hint_x: 0.4
-        write_tab: False
-        multiline: False
-        on_text_validate: root.foo()
-
-    MDTextField:
-        id: onboarding
-        hint_text: "Onboarding deposit (USD)"
+        id: onboard
+        hint_text: "Onboarding deposit (MXN)"
         pos_hint: {"x": 0.55, "y": 0.9}
         size_hint_x: 0.4
         write_tab: False
@@ -101,12 +90,12 @@
         multiline: False
         on_text_validate: root.foo()
 
-
     MDTextField:
-        id: federal_holiday_MXN
-        hint_text: "federal holiday (MXN)"
+        id: desk_fee_USD
+        hint_text: "fee per desk"
+        text: "200"
         pos_hint: {"x": 0.55, "y": 0.4}
-        size_hint_x: 0.4   
+        size_hint_x: 0.4
         write_tab: False
         multiline: False
         on_text_validate: root.foo()
@@ -133,12 +122,18 @@
         text: 'select the location'
         size_hint: 0.4, 0.1
         on_release: app.menu.open()
+
+    MDSwitch:
+        id: onboard_select
+        pos_hint: {"x": 0.47, "y": 0.9}
+
+        on_active: app.check_onboard(*args)
     
     MDSwitch:
         id: security_select
         pos_hint: {"x": 0.47, "y": 0.8}
 
-        on_active: app.check(*args)
+        on_active: app.check_security(*args)
         
 
 App
