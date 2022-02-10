@@ -87,9 +87,12 @@ class Report:
         biwage = float(self.vars_dict['wage_MXN']) / 2
         biwage_USD = biwage * MXN
         if self.vars_dict['holiday_fee']:
-            federal_holiday_MXN = float(self.vars_dict['wage_MXN']) * 12 * 0.023 
-            federal_holiday_USD = federal_holiday_MXN * MXN
-            holiday_p = f'<strong>Federal Holiday Fee</strong> ${federal_holiday_MXN} MXN (${federal_holiday_USD} USD at time of writing, subject to change), herein 2.3% of annual compensation to remove federal holidays from work days.'
+            if self.vars_dict['holiday_coin'] == 'USD':
+                holiday_cash = float(self.vars_dict['wage_MXN']) * 12 * 0.023 * MXN
+            if self.vars_dict['holiday_coin'] == 'MXN':
+                holiday_cash = float(self.vars_dict['wage_MXN']) * 12 * 0.023 
+            holiday_coin = self.vars_dict['holiday_coin']
+            holiday_p = f'<strong>Federal Holiday Fee</strong> ${holiday_cash:.2f} {holiday_coin}, herein 2.3% of annual compensation to remove federal holidays from work days.'
         else:
             holiday_p = ''
         

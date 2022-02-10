@@ -43,6 +43,7 @@ class App(MDApp):
         self.onboard_check = False
         self.apartment_check = False
         self.holiday_check = False
+        self.holiday_coin_check = False
 
     def set_item(self, text_item):
         self.kv.ids.drop_local.set_item(text_item)
@@ -90,6 +91,13 @@ class App(MDApp):
             self.holiday_check = False
             self.root.ids.holiday_label.text = "Holiday fee deactivated!"      
 
+    def check_holiday_coin(self, checkbox, active):
+        if active:
+            self.holiday_coin_check = True
+            self.root.ids.holiday_label.text = 'Security deposit (USD)'
+        if not active:
+            self.holiday_coin_check = False
+            self.root.ids.holiday_label.text = 'Security deposit (MXN)'
 
     def submit(self):
         if self.security_check:
@@ -104,7 +112,12 @@ class App(MDApp):
             self.apartment = self.root.ids.apartment.text + 'USD'
         if not self.apartment_check:
             self.apartment = self.root.ids.apartment.text + 'MXN'
-        
+        if self.holiday_coin_check:
+            self.holiday_coin = 'USD'
+        if not self.holiday_coin_check:
+            self.holiday_coin = 'MXN'
+
+
         try:
             var_dict = {'licensee': self.root.ids.licensee.text, 
             'company': self.root.ids.company.text, 
@@ -122,7 +135,8 @@ class App(MDApp):
             'wage_MXN': self.root.ids.wage_MXN.text, 
             'christmas_MXN': self.root.ids.christmas_MXN.text,
             'desk_fee_USD': self.root.ids.desk_fee_USD.text,
-            'holiday_fee': self.holiday_check}
+            'holiday_fee': self.holiday_check,
+            'holiday_coin': self.holiday_coin}
             self.root.ids.error_label.text = ""
         except:
             print("Error")

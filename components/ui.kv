@@ -173,6 +173,12 @@
 
         on_active: app.check_holiday(*args)
 
+    MDSwitch:
+        id: holiday_coin
+        pos_hint: {"x": 0.9, "y": 0.25}
+
+        on_active: app.check_holiday_coin(*args)
+
     MDLabel:
         id: holiday_label
         text: "Holiday fee deactivated"
