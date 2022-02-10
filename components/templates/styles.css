@@ -43,7 +43,6 @@ table, tr, td {
 .left-top-container {
   width: 45%;
   float: left;
-  background-color: chartreuse;
 }
 
 .middle-top-container {
@@ -67,7 +66,6 @@ table, tr, td {
   text-align: left;
   min-height: 247px;
   display: inline;
-  background-color: chocolate;
 }
 
 .left-container {

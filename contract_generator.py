@@ -123,9 +123,10 @@ class App(MDApp):
             'christmas_MXN': self.root.ids.christmas_MXN.text,
             'desk_fee_USD': self.root.ids.desk_fee_USD.text,
             'holiday_fee': self.holiday_check}
+            self.root.ids.error_label.text = ""
         except:
             print("Error")
-            self.root.ids.label.text = "Error, please check your inputs"
+            self.root.ids.error_label.text = "please check your inputs"
 
 
         try:
