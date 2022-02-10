@@ -6,7 +6,7 @@ from email.mime.base import MIMEBase
 from email import encoders
 
 
-def send_email(attachment, to='davidhioner@gmail.com'):
+def send_email(attachment, to='Nigel@NSNYRE.com'):
     host = "smtp.gmail.com"
     port = '587'
     login = '5CRE.contracts@gmail.com'

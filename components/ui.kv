@@ -40,6 +40,25 @@
         id: licensor
         hint_text: "Licensor name"
         pos_hint: {"x": 0.05, "y": 0.5}
+        text: "Nigel Shamash"
+        size_hint_x: 0.4
+        write_tab: False
+        multiline: False
+        on_text_validate: root.foo()
+
+    MDTextField:
+        id: email
+        hint_text: "E-mail"
+        pos_hint: {"x": 0.05, "y": 0.4}
+        size_hint_x: 0.4
+        write_tab: False
+        multiline: False
+        on_text_validate: root.foo()
+
+    MDTextField:
+        id: worker
+        hint_text: "Worker Name"
+        pos_hint: {"x": 0.05, "y": 0.3}
         size_hint_x: 0.4
         write_tab: False
         multiline: False
@@ -64,8 +83,8 @@
         on_text_validate: root.foo()
 
     MDTextField:
-        id: apartment_price_USD
-        hint_text: "apartment fee (USD)"
+        id: apartment
+        hint_text: "apartment fee (MXN))"
         pos_hint: {"x": 0.55, "y": 0.7}
         size_hint_x: 0.4
         write_tab: False
@@ -118,7 +137,7 @@
 
     MDDropDownItem:
         id: drop_local
-        pos_hint: {"x": 0.05, "y": 0.3}
+        pos_hint: {"x": 0.05, "y": 0.2}
         text: 'select the location'
         size_hint: 0.4, 0.1
         on_release: app.menu.open()
@@ -132,8 +151,27 @@
     MDSwitch:
         id: security_select
         pos_hint: {"x": 0.47, "y": 0.8}
+ 
 
         on_active: app.check_security(*args)
+
+    MDSwitch:
+        id: apartment_select
+        pos_hint: {"x": 0.47, "y": 0.7}
+
+        on_active: app.check_apartment(*args)
+
+    MDSwitch:
+        id: holiday_fee
+        pos_hint: {"x": 0.55, "y": 0.3}
+
+        on_active: app.check_holiday(*args)
+
+    MDLabel:
+        id: holiday_label
+        text: "Holiday fee deactivated"
+        pos_hint: {"x": 0.7, "y": 0.3}
+        size_hint: 0.4, 0.1
         
 
 App

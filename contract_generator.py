@@ -41,6 +41,8 @@ class App(MDApp):
         # to avoid bugs
         self.security_check = False
         self.onboard_check = False
+        self.apartment_check = False
+        self.holiday_check = False
 
     def set_item(self, text_item):
         self.kv.ids.drop_local.set_item(text_item)
@@ -52,8 +54,9 @@ class App(MDApp):
             self.city = "Mexico City"
         else:
             self.specific_location = text_item
+        
     
-    
+
     def check_security(self, checkbox, active):
         if active:
             self.security_check = True
@@ -69,8 +72,23 @@ class App(MDApp):
         if not active:
             self.onboard_check = False     
             self.root.ids.onboard.hint_text = 'Onboard deposit (MXN)'  
+    
 
-        
+    def check_apartment(self, checkbox, active):
+        if active:
+            self.apartment_check = True
+            self.root.ids.apartment.hint_text = 'Apartment fee (USD)'
+        if not active:
+            self.apartment_check = False
+            self.root.ids.apartment.hint_text = 'Apartment fee (MXN)'
+
+    def check_holiday(self, checkbox, active):
+        if active:
+            self.holiday_check = True
+            self.root.ids.holiday_label.text = "Holiday fee activated!"
+        else:
+            self.holiday_check = False
+            self.root.ids.holiday_label.text = "Holiday fee deactivated!"      
 
 
     def submit(self):
@@ -82,21 +100,33 @@ class App(MDApp):
             self.onboard = self.root.ids.onboard.text + 'USD'
         if not self.onboard_check:
             self.onboard = self.root.ids.onboard.text + 'MXN'
+        if self.apartment_check:
+            self.apartment = self.root.ids.apartment.text + 'USD'
+        if not self.apartment_check:
+            self.apartment = self.root.ids.apartment.text + 'MXN'
+        
+        try:
+            var_dict = {'licensee': self.root.ids.licensee.text, 
+            'company': self.root.ids.company.text, 
+            'located_at': self.root.ids.located_at.text,
+            'phone': self.root.ids.phone.text,
+            'email': self.root.ids.email.text,
+            'location': self.location, 
+            'specific_location': self.specific_location,
+            'city': self.city,
+            'worker': self.root.ids.worker.text, 
+            'licensor': self.root.ids.licensor.text, 
+            'apartment': self.apartment, 
+            'onboard': self.onboard, 
+            'security': self.security, 
+            'wage_MXN': self.root.ids.wage_MXN.text, 
+            'christmas_MXN': self.root.ids.christmas_MXN.text,
+            'desk_fee_USD': self.root.ids.desk_fee_USD.text,
+            'holiday_fee': self.holiday_check}
+        except:
+            print("Error")
+            self.root.ids.label.text = "Error, please check your inputs"
 
-        var_dict = {'licensee': self.root.ids.licensee.text, 
-        'company': self.root.ids.company.text, 
-        'located_at': self.root.ids.located_at.text,
-        'phone': self.root.ids.phone.text, 
-        'location': self.location, 
-        'specific_location': self.specific_location,
-        'city': self.city, 
-        'apartment_price_USD': self.root.ids.apartment_price_USD.text, 
-        'licensor': self.root.ids.licensor.text, 
-        'onboard': self.onboard, 
-        'security': self.security, 
-        'wage_MXN': self.root.ids.wage_MXN.text, 
-        'christmas_MXN': self.root.ids.christmas_MXN.text, 
-        'desk_fee_USD': self.root.ids.desk_fee_USD.text,}
 
         try:
             name = var_dict['licensee']
