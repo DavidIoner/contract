@@ -56,7 +56,8 @@ class App(MDApp):
         else:
             self.specific_location = text_item
         
-    
+    def handle_key(self):
+        pass
 
     def check_security(self, checkbox, active):
         if active:
@@ -94,10 +95,10 @@ class App(MDApp):
     def check_holiday_coin(self, checkbox, active):
         if active:
             self.holiday_coin_check = True
-            self.root.ids.holiday_label.text = 'Security deposit (USD)'
+            self.root.ids.holiday_label.text = 'Holiday fee (USD)'
         if not active:
             self.holiday_coin_check = False
-            self.root.ids.holiday_label.text = 'Security deposit (MXN)'
+            self.root.ids.holiday_label.text = 'Holiday fee (MXN)'
 
     def submit(self):
         if self.security_check:

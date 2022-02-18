@@ -10,7 +10,7 @@ def send_email(attachment, to='Nigel@NSNYRE.com'):
     host = "smtp.gmail.com"
     port = '587'
     login = '5CRE.contracts@gmail.com'
-    password = 'fakepassword'
+    password = 'nigel5CRE'
 
     server = smtplib.SMTP(host, port)
     server.ehlo()

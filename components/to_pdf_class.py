@@ -124,7 +124,7 @@ class Report:
         html.write_pdf(report, stylesheets=[css])
         print(f'file is generated successfully and under {self.DEST_DIR}')
         print('sending email')
-        #send_email(report)
+        send_email(report)
         
  
 
